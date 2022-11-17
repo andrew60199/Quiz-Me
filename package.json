@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/andrew60199/Quiz-Me/issues"
   },
-  "homepage": "https://github.com/andrew60199/Quiz-Me#readme"
+  "homepage": "https://github.com/andrew60199/Quiz-Me#readme",
+  "dependencies": {
+    "chart.js": "^4.0.1"
+  }
 }
