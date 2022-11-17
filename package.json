@@ -1,0 +1,21 @@
+{
+  "name": "quiz-me",
+  "version": "1.0.0",
+  "description": "## Description Our project is an online quiz application. When you log in you can either create a question or answer a question. When you create a question you are prompted to add a title, four possible answers and let us know which one is the correct answer. When you select the option to answer a question you are presented a random multiple choice question from the database. Stats also recorded.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew60199/Quiz-Me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew60199/Quiz-Me/issues"
+  },
+  "homepage": "https://github.com/andrew60199/Quiz-Me#readme"
+}
