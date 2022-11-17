@@ -1,0 +1,167 @@
+
+/* a {
+
+}
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:focus {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+} */
+
+
+/* These properties are defined once and used multiple times to ensure one source of truth. */
+:root {
+    --font: 'Inter', sans-serif;
+    --lightgray: #EFEFEF;
+    --grayolive: #736D6A;
+    --offblack: #333333;
+    --primary: #63df05;
+}
+
+body {
+    background-color: var(--lightgray);
+}
+
+/* Had to do this so that the content wouldn't be stuck behind the nav on mobile */
+.footer-helper {
+    height: 4rem;
+}
+
+.reset-button {
+    font-family: var(--font);
+    font-size: 1rem;
+    display: inline-block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+h1 {
+    font-family: var(--font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+p {
+    font-family: var(--font);
+    font-size: 1rem;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3rem;
+    align-items: center;
+    background-color: white;
+    padding: 0 0.625rem;
+}
+    
+.navigation ul {
+    display: flex;
+    position: fixed;
+    font-family: var(--font);
+    bottom: 0;
+    width: 75%;
+    padding: 1rem 12.5%;
+    justify-content: space-between;
+    background-color: white;
+}
+
+main {
+    margin-top: 3.5rem;
+    padding: 0 0.625rem;
+}
+
+
+
+/* Tablet and laptop displays*/
+@media screen and (min-width: 769px) and (max-width: 1600px) {
+    
+    .fixedheadnav {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 4.25rem;
+        top: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+    }
+    
+    .header {
+        width: 48%;
+        padding: 0.625rem;
+    }
+
+    .navigation ul {
+        top: 1rem;       
+        right: 0;
+        bottom: auto;
+        width: 48%;
+        padding: 0.625rem 2rem;
+    }
+
+    main {
+        margin-top: 5rem;
+        padding: 0 0.625rem;
+    }
+
+}
+
+/* Desktop displays*/
+@media screen and (min-width: 1600px) {
+    
+    .fixedheadnav {
+        padding: 0 25%;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        height: 4.225rem;
+        top: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+    }
+    
+    .header {
+        display: flex;
+        width: 24%;
+        padding: 0.625rem;
+    }
+
+    .navigation ul {
+        top: 1rem;
+        bottom: auto;      
+        right: 25%;
+        width: 24%;
+        justify-content: space-between;
+        padding: 0.625rem;
+    } 
+
+    main {
+        margin-top: 5rem;
+        padding: 0 25.5%;
+    }
+
+} 
