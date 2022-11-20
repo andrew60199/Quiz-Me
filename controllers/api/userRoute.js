@@ -16,7 +16,7 @@ router.post('/login', async (req, res) => {
             where: {
                 email: req.body.email
             }
-        })
+        });
 
         if (!userData) {
             res
@@ -35,10 +35,10 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.logginIn = true
+            req.session.loggedIn = true;
 
             res.status(200).json({ user: userData, message: 'Welcome to QuizMe!'});
-        })
+        });
     } catch (err) {
         res.status(500).json(err);
     };
@@ -46,6 +46,13 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    };
 
 });
 
