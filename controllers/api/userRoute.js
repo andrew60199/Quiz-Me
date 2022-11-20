@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const session = require('express-session');
-const { User } = require('../../models');
+const User = require('../../models/user');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -26,7 +25,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        const userPassword = await userData.checkPassword(req.body.password)
+        const userPassword = await userData.checkPassword(req.body.password);
 
         if (!userPassword) {
             res
@@ -38,7 +37,7 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.logginIn = true
 
-            res.status(200).json({ user: userData, message: 'Welcome to QuizMe!'})
+            res.status(200).json({ user: userData, message: 'Welcome to QuizMe!'});
         })
     } catch (err) {
         res.status(500).json(err);
