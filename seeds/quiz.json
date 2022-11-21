@@ -1,46 +1,46 @@
 [
     {
         "question": "Which of the following predatory mammals has the strongest bite force?",
-        "answer_1": "Polar Bear",
-        "answer_2": "Jaguar",
-        "answer_3": "Bengal Tiger",
-        "answer_4": "Grizzly Bear",
+        "answer_one": "Polar Bear",
+        "answer_two": "Jaguar",
+        "answer_three": "Bengal Tiger",
+        "answer_four": "Grizzly Bear",
         "correct_answer": "Jaguar",
         "user_id": 3
     },
     {
         "question": "Who was the only member of the cast of Lord of the Rings to meet the author J.R.R. Tolkien?",
-        "answer_1": "Christopher Lee",
-        "answer_2": "Ian McKellen",
-        "answer_3": "Viggo Mortenson",
-        "answer_4": "Hugo Weaving",
+        "answer_one": "Christopher Lee",
+        "answer_two": "Ian McKellen",
+        "answer_three": "Viggo Mortenson",
+        "answer_four": "Hugo Weaving",
         "correct_answer": "Christopher Lee",
         "user_id": 3
     },
     {
         "question": "English football player Lee Todd famously received a red card in two seconds for:",
-        "answer_1": "Foul language",
-        "answer_2": "Striking a player",
-        "answer_3": "Spitting on a player",
-        "answer_4": "Interfering with a penalty",
+        "answer_one": "Foul language",
+        "answer_two": "Striking a player",
+        "answer_three": "Spitting on a player",
+        "answer_four": "Interfering with a penalty",
         "correct_answer": "Christopher Lee",
         "user_id": 3
     },
     {
         "question": "In Norse Mythology which god is prophecised to slay the trickster Loki at Ragnarok?",
-        "answer_1": "Thor",
-        "answer_2": "Odin",
-        "answer_3": "Tyr",
-        "answer_4": "Heimdall",
+        "answer_one": "Thor",
+        "answer_two": "Odin",
+        "answer_three": "Tyr",
+        "answer_four": "Heimdall",
         "correct_answer": "Heimdall",
         "user_id": 3
     },
     {
         "question": "Who is widely considered to be the first Marvel superhero, first appearing in Marvel Comics issue 1?",
-        "answer_1": "Captain America",
-        "answer_2": "The Human Torch",
-        "answer_3": "Namor the Sub-Mariner",
-        "answer_4": "Black Widow",
+        "answer_one": "Captain America",
+        "answer_two": "The Human Torch",
+        "answer_three": "Namor the Sub-Mariner",
+        "answer_four": "Black Widow",
         "correct_answer": "The Human Torch",
         "user_id": 3
     }
