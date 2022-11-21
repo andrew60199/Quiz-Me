@@ -11,23 +11,23 @@ Quiz.init({
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    question: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    question_one: {
+    answer_one: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    question_two: {
+    answer_two: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    question_three: {
+    answer_three: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    question_four: {
+    answer_four: {
         type: DataTypes.STRING,
         allowNull: false,
     },
