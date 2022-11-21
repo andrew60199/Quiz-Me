@@ -1,6 +1,6 @@
 [
     {
-        "title": "Which of the following predatory mammals has the strongest bite force?",
+        "question": "Which of the following predatory mammals has the strongest bite force?",
         "answer_1": "Polar Bear",
         "answer_2": "Jaguar",
         "answer_3": "Bengal Tiger",
@@ -9,7 +9,7 @@
         "user_id": 3
     },
     {
-        "title": "Who was the only member of the cast of Lord of the Rings to meet the author J.R.R. Tolkien?",
+        "question": "Who was the only member of the cast of Lord of the Rings to meet the author J.R.R. Tolkien?",
         "answer_1": "Christopher Lee",
         "answer_2": "Ian McKellen",
         "answer_3": "Viggo Mortenson",
@@ -18,7 +18,7 @@
         "user_id": 3
     },
     {
-        "title": "English football player Lee Todd famously received a red card in two seconds for:",
+        "question": "English football player Lee Todd famously received a red card in two seconds for:",
         "answer_1": "Foul language",
         "answer_2": "Striking a player",
         "answer_3": "Spitting on a player",
@@ -27,7 +27,7 @@
         "user_id": 3
     },
     {
-        "title": "In Norse Mythology which god is prophecised to slay the trickster Loki at Ragnarok?",
+        "question": "In Norse Mythology which god is prophecised to slay the trickster Loki at Ragnarok?",
         "answer_1": "Thor",
         "answer_2": "Odin",
         "answer_3": "Tyr",
@@ -36,7 +36,7 @@
         "user_id": 3
     },
     {
-        "title": "Who is widely considered to be the first Marvel superhero, first appearing in Marvel Comics issue 1?",
+        "question": "Who is widely considered to be the first Marvel superhero, first appearing in Marvel Comics issue 1?",
         "answer_1": "Captain America",
         "answer_2": "The Human Torch",
         "answer_3": "Namor the Sub-Mariner",
