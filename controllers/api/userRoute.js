@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../../models/user');
+const User = require('../../models/User');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -41,7 +41,7 @@ router.post('/login', async (req, res) => {
         if (!userPassword) {
             res
             .status(400)
-            .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to creaate a new account!' });
+            .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to create a new account!' });
             return;
         }
 
