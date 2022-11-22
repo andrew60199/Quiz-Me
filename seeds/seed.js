@@ -2,12 +2,17 @@ const sequelize = require('../config/connection');
 const { User, Quiz } = require('../models');
 
 const userData = require('./userData.json');
-const quizData = require('./quiz.json')
+const quizData = require('./quiz.json');
 
 const seedUserDatabase = async () => {
-  await sequelize.sync({ force: false });
+  await sequelize.sync({ force: true });
 
   await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Quiz.bulkCreate(quizData, {
     individualHooks: true,
     returning: true,
   });
@@ -15,16 +20,4 @@ const seedUserDatabase = async () => {
   process.exit(0);
 };
 
-const seedQuizDatabase = async () => {
-    await sequelize.sync({ force: false });
-  
-    await Quiz.bulkCreate(quizData, {
-      individualHooks: true,
-      returning: true,
-    });
-  
-    process.exit(0);
-};
-
 seedUserDatabase();
-seedQuizDatabase();
