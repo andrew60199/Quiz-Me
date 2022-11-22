@@ -1,0 +1,36 @@
+{{#if loggedIn}}
+<div class="column">
+<h2 class= "title">Answer this quiz</h2>
+  <div class="row">
+    <div class="col-9">
+        <h3></h3>{{Quiz.question}}<h3>
+        </div>
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-6 col-sm-3">
+        <button type="button" class="btn btn-primary">{{Quiz.answer_one}}</button>
+    </div>
+    <div class="col-6 col-sm-3">
+
+<button type="button" class="btn btn-success">{{Quiz.answer_two}}</button>
+    </div>
+
+    <!-- Force next columns to break to new line -->
+    <div class="w-100"></div>
+
+    <div class="col-6 col-sm-3">
+        <button type="button" class="btn btn-danger">{{Quiz.answer_three}}</button>
+    </div>
+    <div class="col-6 col-sm-3">
+        <button type="button" class="btn btn-warning">{{Quiz.answer_four}}</button>
+    </div>
+  </div>
+</div>
+
+{{/if}}
+
+
+<!-- javascript file-->
+<script src="/javascript/quiz.js"></script>
