@@ -2,12 +2,15 @@ const router = require('express').Router();
 // const sequelize = require('../../config/connection');
 const Statistics = require('../../models/Statistics');
 
-router.get('/api/stats', async (req, res) => {
+router.get('/api/stats/:user_id', async (req, res) => {
     const userStats = await Statistics.findOne({
         where: {
             user_id: req.session.user_id
         }
     });
+    if (!userStats) {
+        res.status(400).json({ message: "Statistics under that user id could not be found." })
+    }
     res.status(200).json(userStats);
 });
 
