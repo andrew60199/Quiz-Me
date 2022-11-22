@@ -26,7 +26,6 @@ const sess = {
   
   app.use(session(sess));
   
-
 const hbs = exphbs.create({ defaultLayout: 'main' });
 
 app.engine('handlebars', hbs.engine)
