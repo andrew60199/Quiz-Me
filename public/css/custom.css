@@ -26,7 +26,6 @@ a:active {
 
 /* These properties are defined once and used multiple times to ensure one source of truth. */
 :root {
-    --font: 'Inter', sans-serif;
     --lightgray: #EFEFEF;
     --grayolive: #736D6A;
     --offblack: #333333;
@@ -43,8 +42,6 @@ body {
 }
 
 .reset-button {
-    font-family: var(--font);
-    font-size: 1rem;
     display: inline-block;
     border: none;
     margin: 0;
@@ -54,16 +51,9 @@ body {
     text-align: center;
 }
 
-h1 {
-    font-family: var(--font);
-    font-size: 1.5rem;
-    font-weight: 700;
+.reset-link {
     text-decoration: none;
-}
-
-p {
-    font-family: var(--font);
-    font-size: 1rem;
+    color: black;
 }
 
 .header {
@@ -80,9 +70,9 @@ p {
 .navigation ul {
     display: flex;
     position: fixed;
-    font-family: var(--font);
+    margin: 0;
     bottom: 0;
-    width: 75%;
+    width: 100%;
     padding: 1rem 12.5%;
     justify-content: space-between;
     background-color: white;
@@ -110,12 +100,13 @@ main {
     }
     
     .header {
+        top: 0.8rem;
         width: 48%;
         padding: 0.625rem;
     }
 
     .navigation ul {
-        top: 1rem;       
+        top: 0.8rem;       
         right: 0;
         bottom: auto;
         width: 48%;
@@ -145,13 +136,14 @@ main {
     }
     
     .header {
+        top: 0.8rem;
         display: flex;
         width: 24%;
         padding: 0.625rem;
     }
 
     .navigation ul {
-        top: 1rem;
+        top: 0.8rem;
         bottom: auto;      
         right: 25%;
         width: 24%;
