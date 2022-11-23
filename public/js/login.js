@@ -13,12 +13,17 @@ const userSignup = async (event) => {
         })
 
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace('/');
+
+            await fetch('/api/stats/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+            }); 
         } else {
-            alert('Sign up has failed!')
-        }
-    }
-}
+            alert('Sign up has failed!');
+        };
+    };
+};
 
 const userLogin = async (event) => {
     event.preventDefault();
@@ -31,34 +36,29 @@ const userLogin = async (event) => {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
-        })
+        });
 
         if (response.ok) {
-            document.location.replace('/')
-
-            await fetch('/api/stats/create', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-            }); 
+            document.location.replace('/');
         } else {
-            alert('Login failed! Please try again or sign up!')
-        }
-    }
-}
+            alert('Login failed! Please try again or sign up!');
+        };
+    };
+};
 
 const userLogout = async () => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-    })
+    });
 
     if (response.ok) {
-        document.location.replace('/')
-    }
-}
+        document.location.replace('/');
+    };
+};
 
-document.querySelector('#signup-submission').addEventListener('submit', userSignup)
-document.querySelector('#login-submission').addEventListener('submit', userSignup)
+document.querySelector('#signup-submission').addEventListener('submit', userSignup);
+document.querySelector('#login-submission').addEventListener('submit', userSignup);
 
 
 
