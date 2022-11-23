@@ -6,7 +6,7 @@ const userSignup = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
 
     if (username && email && password) {
-        const response = await fetch('/signup', {
+        const response = await fetch('/api/signup', {
             method: 'POST',
             body: JSON.stringify({ username, email, password })
         })
@@ -26,7 +26,7 @@ const userLogin = async (event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
-        const response = await fetch('/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             body: JSON.stringify({ email, password })
         })
@@ -39,5 +39,13 @@ const userLogin = async (event) => {
     }
 }
 
+const userLogout = async () => {
+    const response = await fetch('/api/logout', {
+        method: 'POST',
+    })
 
+    if (response.ok) {
+        document.location.replace('/')
+    }
+}
 
