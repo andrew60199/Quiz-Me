@@ -47,14 +47,17 @@ User.init(
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
-            beforeCreate: async (newUserData) => {
-                newUserData.email = await newUserData.email.toLowerCase();
-                return newUserData;
-            },
-            beforeCreate: async (newUserData) => {
-                newUserData.username = await newUserData.username.toLowerCase();
-                return newUserData;
-            }      
+
+            // These need to be fixed! Maybe we can put them all together in one 'beforeCreate'
+
+            // beforeCreate: async (newUserData) => {
+            //     newUserData.email = await newUserData.email.toLowerCase();
+            //     return newUserData;
+            // },
+            // beforeCreate: async (newUserData) => {
+            //     newUserData.username = await newUserData.username.toLowerCase();
+            //     return newUserData;
+            // }      
         },
         sequelize,
         timestamps: false,
