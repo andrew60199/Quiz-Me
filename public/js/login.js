@@ -1,5 +1,6 @@
 const signUpForm = document.querySelector('.signup-form')
 const loginForm = document.querySelector('.login-form')
+const logoutButton = document.querySelector('#logout-button')
 
 if (signUpForm) {
     const userSignup = async (event) => {
@@ -64,17 +65,21 @@ if (loginForm) {
     loginForm.addEventListener('submit', userLogin);
 }
 
-// We will need to do something similar with this function in the future... wrap it in an if statement if they are logged in...
-const userLogout = async () => {
-    const response = await fetch('/api/users/logout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-    });
+if (logoutButton) {
+    const userLogout = async () => {
+        const response = await fetch('/api/users/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+        });
 
-    if (response.ok) {
-        document.location.replace('/');
+        if (response.ok) {
+            document.location.replace('/');
+        };
     };
-};
+
+    logoutButton.addEventListener('click', userLogout)
+
+}
 
 
 
