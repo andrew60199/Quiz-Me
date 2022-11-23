@@ -82,7 +82,7 @@ router.get('/', async (req, res) => {
 // Upload a new quiz 
 router.post('/upload', async (req, res) => {
     try {
-        const quizData = await User.create({ 
+        const quizData = await Quiz.create({ 
             question: req.body.question, 
             answer_one: req.body.answer_one,
             answer_two: req.body.answer_two,
