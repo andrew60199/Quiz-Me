@@ -1,51 +1,70 @@
-const userSignup = async (event) => {
-    event.preventDefault();
+const signUpForm = document.querySelector('.signup-form')
+const loginForm = document.querySelector('.login-form')
 
-    const username = document.querySelector('#email-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+if (signUpForm) {
+    const userSignup = async (event) => {
+        event.preventDefault();
 
-    if (username && email && password) {
-        const response = await fetch('/api/users/signup', {
-            method: 'POST',
-            body: JSON.stringify({ username, email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        })
+        const username = document.querySelector('#username-signup').value.trim();
+        const email = document.querySelector('#email-signup').value.trim();
+        const password = document.querySelector('#password-signup').value.trim();
 
-        if (response.ok) {
-            document.location.replace('/');
+        // console.log(username)
+        // console.log(email)
+        // console.log(password)
 
-            await fetch('/api/stats/create', {
+        if (username && email && password) {
+            const response = await fetch('/api/users/signup', {
                 method: 'POST',
+                body: JSON.stringify({ username, email, password }),
                 headers: { 'Content-Type': 'application/json' },
-            }); 
-        } else {
-            alert('Sign up has failed!');
+            })
+
+            if (response.ok) {
+                document.location.replace('/');
+
+                await fetch('/api/stats/create', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                }); 
+            } else {
+                alert('Sign up has failed!');
+            };
         };
     };
-};
 
-const userLogin = async (event) => {
-    event.preventDefault();
+    signUpForm.addEventListener('submit', userSignup);
+}
 
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+if (loginForm) {
+    const userLogin = async (event) => {
+        event.preventDefault();
 
-    if (email && password) {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+        const email = document.querySelector('#email-login').value.trim();
+        const password = document.querySelector('#password-login').value.trim();
 
-        if (response.ok) {
-            document.location.replace('/');
-        } else {
-            alert('Login failed! Please try again or sign up!');
+        console.log(email)
+        console.log(password)
+
+        if (email && password) {
+            const response = await fetch('/api/users/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            if (response.ok) {
+                document.location.replace('/');
+            } else {
+                alert('Login failed! Please try again or sign up!');
+            };
         };
     };
-};
 
+    loginForm.addEventListener('submit', userLogin);
+}
+
+// We will need to do something similar with this function in the future... wrap it in an if statement if they are logged in...
 const userLogout = async () => {
     const response = await fetch('/api/users/logout', {
         method: 'POST',
@@ -56,9 +75,6 @@ const userLogout = async () => {
         document.location.replace('/');
     };
 };
-
-document.querySelector('#signup-submission').addEventListener('submit', userSignup);
-document.querySelector('#login-submission').addEventListener('submit', userSignup);
 
 
 

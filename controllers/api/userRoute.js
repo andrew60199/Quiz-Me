@@ -36,6 +36,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        // Something is going wrong here
         const userPassword = await userData.checkPassword(req.body.password);
 
         if (!userPassword) {
