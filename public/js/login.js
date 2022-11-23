@@ -1,3 +1,24 @@
+const userSignup = async (event) => {
+    event.preventDefault();
+
+    const username = document.querySelector('#email-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+
+    if (username && email && password) {
+        const response = await fetch('/signup', {
+            method: 'POST',
+            body: JSON.stringify({ username, email, password })
+        })
+
+        if (response.ok) {
+            document.location.replace('/')
+        } else {
+            alert('Sign up has failed!')
+        }
+    }
+}
+
 const userLogin = async (event) => {
     event.preventDefault();
 
@@ -17,3 +38,6 @@ const userLogin = async (event) => {
         }
     }
 }
+
+
+
