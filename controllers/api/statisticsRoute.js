@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Statistics = require('../../models/Statistics');
 
-router.get('/api/stats/:user_id', async (req, res) => {
+router.get('/:user_id', async (req, res) => {
     const userStats = await Statistics.findOne({
         where: {
             user_id: req.session.user_id
@@ -13,7 +13,7 @@ router.get('/api/stats/:user_id', async (req, res) => {
     res.status(200).json(userStats);
 });
 
-router.post('/api/stats', async (req,res) => {
+router.post('/create', async (req,res) => {
     const newUserStats = await Statistics.create({
         total_played: "",
         wins: 0,
@@ -22,7 +22,7 @@ router.post('/api/stats', async (req,res) => {
     res.status(200).json(newUserStats);
 });
 
-router.put('/api/stats/:user_id/total', async (req, res) => {
+router.put('/:user_id/total', async (req, res) => {
     try {
         const userStats = Statistics.update(req.body.total_played, {
             where: {
@@ -38,7 +38,7 @@ router.put('/api/stats/:user_id/total', async (req, res) => {
     };
 });
 
-router.put('/api/stats/:user_id/wins', async (req, res) => {
+router.put('/:user_id/wins', async (req, res) => {
     try {
         const userStats = Statistics.update(req.body.wins, {
             where: {
