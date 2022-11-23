@@ -16,6 +16,9 @@ router.get('/signup', (req, res) => {
     res.render('signup')
 });
 
+router.get('/quiz', (req, res) => {
+    res.render('answerquiz')
+});
 
 
 module.exports = router;
