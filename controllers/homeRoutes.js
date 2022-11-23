@@ -4,9 +4,18 @@ router.get('/', (req, res) => {
     res.render('homepage')
 });
 
-router.get('/login', (req, res) => {
+router.get('/profile', (req, res) => {
+    // Check if they are logged in
+    // If so then show their profile page
+
+    // Otherwise send them to the login page
     res.render('login')
 });
+
+router.get('/signup', (req, res) => {
+    res.render('signup')
+});
+
 
 
 module.exports = router;
