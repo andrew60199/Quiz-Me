@@ -92,7 +92,7 @@ router.post('/upload', async (req, res) => {
             user_id: req.body.user_id
         });
 
-        // Then do something
+        res.status(200).json(quizData); 
 
     } catch (err) {
         res.status(400).json(err);
