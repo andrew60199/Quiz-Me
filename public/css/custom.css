@@ -83,6 +83,10 @@ main {
     padding: 0 0.625rem;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 
 
 /* Tablet and laptop displays*/

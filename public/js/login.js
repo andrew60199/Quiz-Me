@@ -14,6 +14,8 @@ if (signUpForm) {
         // console.log(email)
         // console.log(password)
 
+        const communication = document.querySelector('#message')
+
         if (username && email && password) {
             const response = await fetch('/api/users/signup', {
                 method: 'POST',
@@ -29,7 +31,8 @@ if (signUpForm) {
                     headers: { 'Content-Type': 'application/json' },
                 }); 
             } else {
-                alert('Sign up has failed!');
+                // We could communicate some more helpful messages in the future based on the error they receive
+                communication.textContent = 'It looks like there is something wrong with the details you have provided. Please try again.'  
             };
         };
     };
@@ -38,6 +41,8 @@ if (signUpForm) {
 }
 
 if (loginForm) {
+    const communication = document.querySelector('#message')
+
     const userLogin = async (event) => {
         event.preventDefault();
 
@@ -57,7 +62,9 @@ if (loginForm) {
             if (response.ok) {
                 document.location.replace('/');
             } else {
-                alert('Login failed! Please try again or sign up!');
+                // Rather than an alert we can send a message to the user
+                const data = await response.json()
+                communication.textContent = data.message  
             };
         };
     };
