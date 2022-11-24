@@ -5,15 +5,16 @@
 
 <div class = "column"></div>
 <h2 class="title">Login</h2>
-<form id="login-submission" class="login-form">
+<form class="login-form">
   <div>
     <label for="email-login">Email address:</label>
-    <input type="text" id="email-login" />
+    <input type="text" id="email-login" required/>
   </div>
   <div>
     <label for="password-login">Password:</label>
-    <input type="password" id="password-login" />
+    <input type="password" id="password-login" required />
   </div>
+  <p id="message" class="bold"></p>
   <div>
     <button type="submit"  class="btn btn-outline-info" >Login</button>
   </div>
