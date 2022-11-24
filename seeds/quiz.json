@@ -52,5 +52,14 @@
         "answer_four": "Thursday",
         "correct_answer": "Wednesday",
         "user_id": 2
+    },
+    {
+        "question": "What is the parent company name of Subaru?",
+        "answer_one": "Toyota Motor Corporation",
+        "answer_two": "FujiHeavy Industries",
+        "answer_three": "Subaru Motor Corporation",
+        "answer_four": "Honda Motor Company",
+        "correct_answer": "FujiHeavy Industries",
+        "user_id": 1
     }
 ]
