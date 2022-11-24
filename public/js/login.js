@@ -1,6 +1,7 @@
 const signUpForm = document.querySelector('.signup-form')
 const loginForm = document.querySelector('.login-form')
 const logoutButton = document.querySelector('#logout-button')
+const deleteButton = document.querySelector('#delete-button')
 
 if (signUpForm) {
     const userSignup = async (event) => {
@@ -77,7 +78,26 @@ if (logoutButton) {
     };
 
     logoutButton.addEventListener('click', userLogout)
+}
 
+if (deleteButton) {
+    const userDelete = async () => {
+        const response = await fetch('/api/users/delete', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (response.ok) {
+            document.location.replace('/');
+
+            await fetch('/api/stats/delete', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
+            })
+        };
+    }
+
+    deleteButton.addEventListener('click', userDelete)
 }
 
 
