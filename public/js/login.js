@@ -77,8 +77,8 @@ if (logoutButton) {
         };
     };
 
-    logoutButton.addEventListener('click', userLogout)
-}
+    logoutButton.addEventListener('click', userLogout);
+};
 
 if (deleteButton) {
     const userDelete = async () => {
@@ -99,6 +99,8 @@ if (deleteButton) {
 
     deleteButton.addEventListener('click', userDelete)
 };
+
+
 
 
 

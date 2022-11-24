@@ -106,7 +106,7 @@ router.put('/update/username', async (req, res) => {
 
 router.put('/update/email', async (req, res) => {
     try {
-        const userData = await User.update(req.body.username, {
+        const userData = await User.update(req.body.email, {
             where: {
                 id: req.session.user_id
             }
@@ -124,7 +124,7 @@ router.put('/update/email', async (req, res) => {
 
 router.put('/update/password', async (req, res) => {
     try {
-        const userData = await User.update(req.body.username, {
+        const userData = await User.update(req.body.password, {
             where: {
                 id: req.session.user_id
             }
