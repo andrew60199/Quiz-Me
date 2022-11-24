@@ -42,15 +42,17 @@ router.get('/', async (req, res) => {
         // const totalQuizzes = await totalData.get({ plain: true });
         const totalQuizzesPlain = totalData.map((project) => project.get({ plain: true }))
 
-        const totalQuizzes = totalQuizzesPlain[0]       
+        const totalQuizzes = totalQuizzesPlain[0]  
+        
+        const loopingArray = []     
 
-        const maybeLoop = async (quizzes, theUsersID) => {
+        const maybeLoop = async (quizzes, userPlayedArray, theUsersID) => {
             // Then call this function
             const getRandomQuizId = (max) => {
                 return Math.ceil(Math.random() * max)
             }
 
-            const randomId = getRandomQuizId(quizzes)
+            const randomId = getRandomQuizId(quizzes)           
 
             // Then findOne where the quiz equals the random number
             const getQuiz = await Quiz.findOne({
@@ -62,28 +64,49 @@ router.get('/', async (req, res) => {
             const getQuizPlain = getQuiz.get({ plain: true })
             
             // Then check if they have already answered that question
-            const hasPlayed = (userArr, randomId) => {
-                return userArr.includes(randomId)
+            const hasPlayed = (userArr, number) => {
+                const randomNumberToString = number.toString()
+
+                return userArr.includes(randomNumberToString)
             }
 
-            hasPlayed(userTotalArray , getQuizPlain.id)
-
-            // const checking = hasPlayed(userTotalArray , getQuizPlain.id)
-            // console.log(checking)
-            // console.log(theUsersID)
-            // console.log(getQuizPlain.user_id)
+            console.log(userPlayedArray)
+            console.log(randomId)
+            const checking = hasPlayed(userPlayedArray , getQuizPlain.id)
+            console.log(checking)
+            
+            console.log(theUsersID)
+            console.log(getQuizPlain.user_id)
 
             // If so generate a new random number... no need to get a new total
-            //  || userId === getQuizPlain.user_id
-            if (hasPlayed === true || theUsersID === getQuizPlain.user_id) {
-                maybeLoop(quizzes)
+            // This was causing an infinite loop! If the user had answered all the quizzes/created them all
+            if (checking || theUsersID === getQuizPlain.user_id) {
+
+                // This stops it from infinitely looping in those cases
+                // Check for double entries
+                const checking2 = loopingArray.includes(getQuizPlain.id)
+
+                if (!checking2) {
+                    loopingArray.push(getQuizPlain.id)
+                }              
+
+                if (loopingArray.length === quizzes) {
+                    console.log('You have answered all the quizzes in our database')
+                    res.status(200).json({ message: 'You have answered all the quizzes in our database' })
+
+                } else {
+                    maybeLoop(totalQuizzes.total, userTotalArray, userId)
+                }
+                
+
             } else {
                 // If they haven't answered the question then we will send it to the front end!
                 res.json(getQuizPlain)
+
             }
         } 
         
-        maybeLoop(totalQuizzes.total, userId)
+        maybeLoop(totalQuizzes.total, userTotalArray, userId)
         
     } catch (error) {
         res.status(500).json(error);
