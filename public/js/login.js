@@ -95,10 +95,12 @@ if (deleteButton) {
                 headers: { 'Content-Type': 'application/json' }
             })
         };
-    }
+    };
 
     deleteButton.addEventListener('click', userDelete)
-}
+};
+
+
 
 
 
