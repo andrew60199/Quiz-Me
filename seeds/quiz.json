@@ -43,5 +43,14 @@
         "answer_four": "Black Widow",
         "correct_answer": "The Human Torch",
         "user_id": 3
+    },
+    {
+        "question": "What day was this entry made?",
+        "answer_one": "Monday",
+        "answer_two": "Tuesday",
+        "answer_three": "Wednesday",
+        "answer_four": "Thursday",
+        "correct_answer": "Wednesday",
+        "user_id": 2
     }
 ]

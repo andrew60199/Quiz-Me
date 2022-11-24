@@ -16,7 +16,6 @@ router.post('/signup', async (req, res) => {
             res.status(200).json(userData);
         });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     };
 });
@@ -36,7 +35,6 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        // Something is going wrong here
         const userPassword = await userData.checkPassword(req.body.password);
 
         if (!userPassword) {

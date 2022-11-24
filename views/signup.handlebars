@@ -1,19 +1,20 @@
 <div class = "column"></div>
 <h2 class="title">Create new account</h2>
-<form id="signup-submission" class="signup-form">
+<form class="signup-form">
 
   <div>
     <label for="username">Username:</label>
-    <input type="text" id="username-signup" />
+    <input type="text" id="username-signup" required/>
   </div>
   <div>
     <label for="email-login">Email address:</label>
-    <input type="text" id="email-signup" />
+    <input type="text" id="email-signup" required/>
   </div>
   <div>
     <label for="password-login">Password:</label>
-    <input type="password" id="password-signup" />
+    <input type="password" id="password-signup" required/>
   </div>
+  <p id="message" class="bold"></p>
   <div>
     <button type="submit"  class="btn btn-outline-info" >Create your account</button>
   </div>
