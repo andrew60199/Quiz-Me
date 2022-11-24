@@ -52,5 +52,212 @@
         "answer_four": "Thursday",
         "correct_answer": "Wednesday",
         "user_id": 2
+    },
+    {
+        "question": "What was the first movie ever created by Disney?",
+        "answer_one": "Cinderella",
+        "answer_two": "Snow White and the Seven Dwarves",
+        "answer_three": "Pinocchio",
+        "answer_four": "Bambi",
+        "correct_answer": "Snow White and the Seven Dwarves",
+        "user_id": 3
+    },
+    {
+        "question": "What planet in our solar system is the hottest?",
+        "answer_one": "Mars",
+        "answer_two": "Mercury",
+        "answer_three": "Venus",
+        "answer_four": "Jupiter",
+        "correct_answer": "Venus",
+        "user_id": 3
+    },
+    {
+        "question": "Bird was the nickname of which famous jazz saxophonist?",
+        "answer_one": "Sonny Rollins",
+        "answer_two": "John Coltrane",
+        "answer_three": "Charlie Parker",
+        "answer_four": "Dexter Gordon",
+        "correct_answer": "Charlie Parker",
+        "user_id": 3
+    },
+    {
+        "question": "What is the largest country in Africa by area?",
+        "answer_one": "Algeria",
+        "answer_two": "Kenya",
+        "answer_three": "Libya",
+        "answer_four": "Egypt",
+        "correct_answer": "Algeria",
+        "user_id": 3
+    },
+    {
+        "question": "WiFi was invented in which country?",
+        "answer_one": "USA",
+        "answer_two": "Canada",
+        "answer_three": "Australia",
+        "answer_four": "Germany",
+        "correct_answer": "Australia",
+        "user_id": 3
+    },
+    {
+        "question": "Saturn is the Roman equivilant of which Greek Mythological figure?",
+        "answer_one": "Hephaestus",
+        "answer_two": "Hermes",
+        "answer_three": "Thanatos",
+        "answer_four": "Kronos",
+        "correct_answer": "Kronos",
+        "user_id": 3
+    },
+    {
+        "question": "Which African animal holds the nickname of the widowmaker?",
+        "answer_one": "Lion",
+        "answer_two": "Cape Buffalo",
+        "answer_three": "Hippo",
+        "answer_four": "Elephant",
+        "correct_answer": "Cape Buffalo",
+        "user_id": 3
+    },
+    {
+        "question": "Which sport did former US president Abraham Lincoln a champion in?",
+        "answer_one": "Fencing",
+        "answer_two": "Javelin",
+        "answer_three": "Boxing",
+        "answer_four": "Wrestling",
+        "correct_answer": "Wrestling",
+        "user_id": 3
+    },
+    {
+        "question": "Who was the author of the novel Jurassic Park?",
+        "answer_one": "Robert Jordan",
+        "answer_two": "Brandon Sanderson",
+        "answer_three": "Michael Crichton",
+        "answer_four": "Terry Goodkind",
+        "correct_answer": "Michael Crichton",
+        "user_id": 3
+    },
+    {
+        "question": "The TV show Supernatural had a record-breaking run, airing a total of:",
+        "answer_one": "319 episodes",
+        "answer_two": "327 episodes",
+        "answer_three": "333 episodes",
+        "answer_four": "340 episodes",
+        "correct_answer": "327 episodes",
+        "user_id": 3
+    },
+    {
+        "question": "Which metal on the periodic table has the atomic symbol Sn?",
+        "answer_one": "Gold",
+        "answer_two": "Lead",
+        "answer_three": "Iron",
+        "answer_four": "Tin",
+        "correct_answer": "Tin",
+        "user_id": 3
+    },
+    {
+        "question": "The Egyptian god Horus was said to have the head of which animal?",
+        "answer_one": "Falcon",
+        "answer_two": "Cat",
+        "answer_three": "Lion",
+        "answer_four": "Crocodile",
+        "correct_answer": "Falcon",
+        "user_id": 3
+    },
+    {
+        "question": "What is the capital city of Canada?",
+        "answer_one": "Toronto",
+        "answer_two": "Quebec",
+        "answer_three": "Ottowa",
+        "answer_four": "Vancouver",
+        "correct_answer": "Ottowa",
+        "user_id": 3
+    },
+    {
+        "question": "How many players are required in a team for field hockey?",
+        "answer_one": "7",
+        "answer_two": "9",
+        "answer_three": "11",
+        "answer_four": "13",
+        "correct_answer": "11",
+        "user_id": 3
+    },
+    {
+        "question": "Which world-famous strongman was the first person successfully to deadlift 500kg?",
+        "answer_one": "Brian Shaw",
+        "answer_two": "Hafthor Bjornsson",
+        "answer_three": "Robert Oberst",
+        "answer_four": "Eddie Hall",
+        "correct_answer": "Eddie Hall",
+        "user_id": 3
+    },
+    {
+        "question": "In which country was LEGO invented?",
+        "answer_one": "Denmark",
+        "answer_two": "Sweden",
+        "answer_three": "Hungary",
+        "answer_four": "Russia",
+        "correct_answer": "Denmark",
+        "user_id": 3
+    },
+    {
+        "question": "What was the first monster to ever do battle with Godzilla in a movie?",
+        "answer_one": "King Kong",
+        "answer_two": "Anguirus",
+        "answer_three": "Mothra",
+        "answer_four": "Rodan",
+        "correct_answer": "Anguirus",
+        "user_id": 3
+    },
+    {
+        "question": "What was the first story published by author H.P. Lovecraft?",
+        "answer_one": "The Tomb",
+        "answer_two": "Dagon",
+        "answer_three": "Polaris",
+        "answer_four": "The Alchemist",
+        "correct_answer": "The Alchemist",
+        "user_id": 3
+    },
+    {
+        "question": "What of the following days of the week was not named after a Norse god?",
+        "answer_one": "Wednesday",
+        "answer_two": "Thursday",
+        "answer_three": "Friday",
+        "answer_four": "Saturday",
+        "correct_answer": "Saturday",
+        "user_id": 3
+    },
+    {
+        "question": "What colour is a polar bear's skin?",
+        "answer_one": "White",
+        "answer_two": "Pink",
+        "answer_three": "Grey",
+        "answer_four": "Black",
+        "correct_answer": "Black",
+        "user_id": 3
+    },
+    {
+        "question": "Due to theraml expansion, the Eiffel Tower can grow in summer by a height of:",
+        "answer_one": "10cm",
+        "answer_two": "12cm",
+        "answer_three": "15cm",
+        "answer_four": "20cm",
+        "correct_answer": "15cm",
+        "user_id": 3
+    },
+    {
+        "question": "What word is used to describe a group of alligators?",
+        "answer_one": "Gang",
+        "answer_two": "Troupe",
+        "answer_three": "Coalition",
+        "answer_four": "Congregation",
+        "correct_answer": "Congregation",
+        "user_id": 3
+    },
+    {
+        "question": "Keith Moon was the drummer of which famous band?",
+        "answer_one": "Cream",
+        "answer_two": "The Yardbirds",
+        "answer_three": "The Who",
+        "answer_four": "The Rolling Stones",
+        "correct_answer": "Congregation",
+        "user_id": 3
     }
 ]
