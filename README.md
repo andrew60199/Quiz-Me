@@ -34,9 +34,9 @@ Before attempting to use this application, you must have the follow programs ins
  The application will be invoked by using the following command:
 
   ```bash
-  node index.js
+  node server.js
   ```
-  Then in your preferred browser open  http://localhost:3000
+  Then in your preferred browser open  http://localhost:3001
 
 Once you are on the webpage: 
 

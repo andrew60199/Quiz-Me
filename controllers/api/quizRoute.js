@@ -70,13 +70,13 @@ router.get('/', async (req, res) => {
                 return userArr.includes(randomNumberToString)
             }
 
-            console.log(userPlayedArray)
-            console.log(randomId)
+            // console.log(userPlayedArray)
+            // console.log(randomId)
             const checking = hasPlayed(userPlayedArray , getQuizPlain.id)
-            console.log(checking)
+            // console.log(checking)
             
-            console.log(theUsersID)
-            console.log(getQuizPlain.user_id)
+            // console.log(theUsersID)
+            // console.log(getQuizPlain.user_id)
 
             // If so generate a new random number... no need to get a new total
             // This was causing an infinite loop! If the user had answered all the quizzes/created them all
