@@ -2,29 +2,29 @@
 <div class="column">
 <h2 class= "title">Create a Question</h2>
 <label for="question">Enter the question</label>
-    <input type="text" class="form-control" placeholder="What's...?" />
+    <input type="text" class="form-control" id= "post-question" name="post-question" placeholder="What's...?" />
 
 
 <div class="input-group">
   <div class="input-group-text">
     <span class="input-group-text" id="inputGroup-sizing-default">A.</span>
     <input type="text" class="form-control" aria-label="Text input with radio button">
-    <input class="form-check-input mt-0" type="radio" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
+    <input class="form-check-input mt-0" type="radio" id="answer-one" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
   </div>
     <div class="input-group-text">
     <span class="input-group-text" id="inputGroup-sizing-default">B.</span>
     <input type="text" class="form-control" aria-label="Text input with radio button">
-    <input class="form-check-input mt-0" type="radio" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
+    <input class="form-check-input mt-0" type="radio" id="answer-two" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
   </div>
     <div class="input-group-text">
     <span class="input-group-text" id="inputGroup-sizing-default">C.</span>
     <input type="text" class="form-control" aria-label="Text input with radio button">
-    <input class="form-check-input mt-0" type="radio" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
+    <input class="form-check-input mt-0" type="radio" id="answer-three" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
   </div>
     <div class="input-group-text">
     <span class="input-group-text" id="inputGroup-sizing-default">D.</span>
     <input type="text" class="form-control" aria-label="Text input with radio button">
-    <input class="form-check-input mt-0" type="radio" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
+    <input class="form-check-input mt-0" type="radio" id="answer-four" name="correct-answer" value="" aria-label="Radio button"><label>Correct answer</label>
   </div>
 <div>
     <button type="submit"  class="btn btn-outline-info">Submit quiz</button>
@@ -35,5 +35,5 @@
 
 
 {{#if loggedIn}}
-<script src="/javascript/quiz.js"></script>
+<script src="./js/createquiz.js"></script>
 {{/if}}

@@ -82,17 +82,19 @@ router.get('/', async (req, res) => {
 // Upload a new quiz 
 router.post('/upload', async (req, res) => {
     try {
-        const quizData = await User.create({ 
+        // Can we refactor this so that we don't get Sequelize injection??
+        const quizData = await Quiz.create({ 
             question: req.body.question, 
             answer_one: req.body.answer_one,
             answer_two: req.body.answer_two,
             answer_three: req.body.answer_three,
             answer_four: req.body.answer_four,
             correct_answer: req.body.correct_answer,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         });
 
-        // Then do something
+        // We should send back a message saying the quiz has been added uploaded for people to start using it...
+        res.status(200).json(quizData); 
 
     } catch (err) {
         res.status(400).json(err);
