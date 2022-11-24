@@ -259,5 +259,14 @@
         "answer_four": "The Rolling Stones",
         "correct_answer": "Congregation",
         "user_id": 3
+    },
+    {
+        "question": "What is the parent company name of Subaru?",
+        "answer_one": "Toyota Motor Corporation",
+        "answer_two": "FujiHeavy Industries",
+        "answer_three": "Subaru Motor Corporation",
+        "answer_four": "Honda Motor Company",
+        "correct_answer": "FujiHeavy Industries",
+        "user_id": 1
     }
 ]
