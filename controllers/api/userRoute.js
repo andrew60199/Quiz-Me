@@ -66,4 +66,22 @@ router.post('/logout', async (req, res) => {
     };
 });
 
+router.delete('/delete', async (req, res) => {
+    try {
+        const userData = await User.destroy({
+            where: {
+                id: req.session.user_id
+            }
+        })
+
+        if (!userData) {
+            res.status(404).json('This user could not be found!')
+        }
+
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
 module.exports = router;
