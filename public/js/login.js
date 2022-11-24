@@ -9,11 +9,6 @@ if (signUpForm) {
         const username = document.querySelector('#username-signup').value.trim();
         const email = document.querySelector('#email-signup').value.trim();
         const password = document.querySelector('#password-signup').value.trim();
-
-        // console.log(username)
-        // console.log(email)
-        // console.log(password)
-
         const communication = document.querySelector('#message')
 
         if (username && email && password) {
@@ -48,9 +43,6 @@ if (loginForm) {
 
         const email = document.querySelector('#email-login').value.trim();
         const password = document.querySelector('#password-login').value.trim();
-
-        console.log(email)
-        console.log(password)
 
         if (email && password) {
             const response = await fetch('/api/users/login', {
