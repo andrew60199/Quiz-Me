@@ -88,13 +88,13 @@ router.delete('/delete', async (req, res) => {
 
 router.put('/update/username', async (req, res) => {
     try {
-        const userData = await User.update(req.body.username, {
+        const userData = await User.update(req.body, {
             where: {
                 id: req.session.user_id
             }
         });
 
-        if (!userData) {
+        if (!userData[0]) {
             res.status(404).json('User data could not be found!')
         }
 
@@ -106,13 +106,13 @@ router.put('/update/username', async (req, res) => {
 
 router.put('/update/email', async (req, res) => {
     try {
-        const userData = await User.update(req.body.email, {
+        const userData = await User.update(req.body, {
             where: {
                 id: req.session.user_id
             }
         });
 
-        if (!userData) {
+        if (!userData[0]) {
             res.status(404).json('User data could not be found!')
         }
 
@@ -124,13 +124,13 @@ router.put('/update/email', async (req, res) => {
 
 router.put('/update/password', async (req, res) => {
     try {
-        const userData = await User.update(req.body.password, {
+        const userData = await User.update(req.body, {
             where: {
                 id: req.session.user_id
             }
         });
 
-        if (!userData) {
+        if (!userData[0]) {
             res.status(404).json('User data could not be found!')
         }
 

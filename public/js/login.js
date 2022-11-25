@@ -85,22 +85,16 @@ if (deleteButton) {
         const response = await fetch('/api/users/delete', {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' }
-        });
+        })
 
         if (response.ok) {
-            const clearStats = await fetch('/api/stats/delete', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' }
-            })
-
-            if (clearStats.ok) {
-                document.location.replace('/')
-            }
+            document.location.replace('/')
         };
-    };
 
     deleteButton.addEventListener('click', userDelete)
 };
+};
+
 
 
 
