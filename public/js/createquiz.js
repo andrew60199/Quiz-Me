@@ -14,6 +14,7 @@ async function newFormHandler(event) {
       for (const selected of possibleAnswers) {
         if (selected.checked) {
           correctAnswer = selected.value
+          break;
         }
       }
     })
