@@ -45,19 +45,16 @@ User.init(
         hooks: {
             beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                newUserData.email = await newUserData.email.toLowerCase();
+                newUserData.username = await newUserData.username.toLowerCase();
                 return newUserData;
             },
-
-            // These need to be fixed! Maybe we can put them all together in one 'beforeCreate'
-
-            // beforeCreate: async (newUserData) => {
-            //     newUserData.email = await newUserData.email.toLowerCase();
-            //     return newUserData;
-            // },
-            // beforeCreate: async (newUserData) => {
-            //     newUserData.username = await newUserData.username.toLowerCase();
-            //     return newUserData;
-            // }      
+            beforeUpdate: async (updatedUserData) => {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                updatedUserData.email = await updatedUserData.email.toLowerCase();
+                updatedUserData.username = await updatedUserData.username.toLowerCase();
+                return updatedUserData;
+            },  
         },
         sequelize,
         timestamps: false,
