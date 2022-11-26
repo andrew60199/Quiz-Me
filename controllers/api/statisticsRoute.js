@@ -26,7 +26,7 @@ router.delete('/delete', async (req, res) => {
     try {
         const userStats = await Statistics.destroy({
             where: {
-                user_id: req.session.user_id
+                id: req.session.user_id
             }
         })
 
