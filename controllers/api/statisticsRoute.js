@@ -5,7 +5,7 @@ router.get('/:user_id', async (req, res) => {
     try {
         const userStats = await Statistics.findOne({
             where: {
-                user_id: req.session.user_id
+                id: req.session.user_id
             }
         });
 
@@ -42,7 +42,8 @@ router.delete('/delete', async (req, res) => {
             res.status(404).json('These statistics could not be found!')
         }
 
-        res.status(200).json(userStats)
+        const userStatsPlain = userStats.get({ plain: true })
+        res.status(200).json(userStatsPlain)
 
         
     } catch (err) {
