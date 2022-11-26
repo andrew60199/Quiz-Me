@@ -72,15 +72,71 @@ router.delete('/delete', async (req, res) => {
             where: {
                 id: req.session.user_id
             }
-        })
+        });
 
         if (!userData) {
             res.status(404).json('This user could not be found!')
+        };
+
+        res.status(200).json(userData);
+
+        
+    } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
+router.put('/update/username', async (req, res) => {
+    try {
+        const userData = await User.update(req.body.username, {
+            where: {
+                id: req.session.user_id
+            }
+        });
+
+        if (!userData) {
+            res.status(404).json('User data could not be found!')
         }
 
         res.status(200).json(userData)
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
+    }
+});
+
+router.put('/update/email', async (req, res) => {
+    try {
+        const userData = await User.update(req.body.email, {
+            where: {
+                id: req.session.user_id
+            }
+        });
+
+        if (!userData) {
+            res.status(404).json('User data could not be found!')
+        }
+
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.put('/update/password', async (req, res) => {
+    try {
+        const userData = await User.update(req.body.password, {
+            where: {
+                id: req.session.user_id
+            }
+        });
+
+        if (!userData) {
+            res.status(404).json('User data could not be found!')
+        }
+
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 

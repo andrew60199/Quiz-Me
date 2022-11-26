@@ -27,5 +27,22 @@ router.get('/create', withAuth, (req, res) => {
     res.render('createQuiz')
 });
 
+router.get('/editmenu', withAuth, (req, res) => {
+    res.render('editmenu')
+});
+
+router.get('/usernameedit', withAuth, (req, res) => {
+    res.render('usernameedit')
+});
+
+router.get('/emailedit', withAuth, (req, res) => {
+    res.render('emailedit')
+});
+
+router.get('/passwordedit', withAuth, (req, res) => {
+    res.render('passwordedit')
+});
+
+
 
 module.exports = router;

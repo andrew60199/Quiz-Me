@@ -77,8 +77,8 @@ if (logoutButton) {
         };
     };
 
-    logoutButton.addEventListener('click', userLogout)
-}
+    logoutButton.addEventListener('click', userLogout);
+};
 
 if (deleteButton) {
     const userDelete = async () => {
@@ -88,17 +88,23 @@ if (deleteButton) {
         });
 
         if (response.ok) {
-            document.location.replace('/');
-
-            await fetch('/api/stats/delete', {
+            const clearStats = await fetch('/api/stats/delete', {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             })
+
+            if (clearStats.ok) {
+                document.location.replace('/')
+            }
         };
-    }
+    };
 
     deleteButton.addEventListener('click', userDelete)
-}
+};
+
+
+
+
 
 
 
