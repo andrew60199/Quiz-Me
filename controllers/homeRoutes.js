@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth')
+const User = require('../models/user')
 
 router.get('/', (req, res) => {
     res.render('homepage')
@@ -9,7 +10,7 @@ router.get('/login', (req, res) => {
     res.render('login')
 });
 
-router.get('/profile', withAuth, (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     // Check if they are logged in with the helper function
     // If they are logged in they will be presented their profile/stats
     res.render('stats')
