@@ -6,6 +6,7 @@ const buttonOne = document.querySelector('#one')
 const buttonTwo = document.querySelector('#two')
 const buttonThree = document.querySelector('#three')
 const buttonFour = document.querySelector('#four')
+const container = document.querySelector('.container')
 
 
 const getQuiz = async () => {
@@ -23,10 +24,10 @@ const getQuiz = async () => {
     buttonThree.textContent = data.answer_three
     buttonFour.textContent = data.answer_four
 
-    
+    container.addEventListener('click', (event) => {
+        console.log(event.target.innerText)
+    })
 }
-
-
 
 getQuiz();
 
