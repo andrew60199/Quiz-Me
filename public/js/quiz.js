@@ -6,6 +6,7 @@ const buttonOne = document.querySelector('#one')
 const buttonTwo = document.querySelector('#two')
 const buttonThree = document.querySelector('#three')
 const buttonFour = document.querySelector('#four')
+const container = document.querySelector('.container')
 
 const getQuiz = async () => {
     const response = await fetch('/api/quiz/')
@@ -22,22 +23,10 @@ const getQuiz = async () => {
     buttonThree.textContent = data.answer_three
     buttonFour.textContent = data.answer_four
 
-    
-
-    /*const selectAnswer = async () => {
-        for (option of quizButtons) {
-            if (option.textContent === data.correct_answer) {
-                results.textContent = data.correct_answer + ' is the correct answer!'
-            } else {
-                results.textContent = 'That is incorrect. The correct answer is '  + data.correct_answer + '.'
-            }
-        }
-    }*/
-
-    // quizButtons.addEventListener('click', selectAnswer)
+    container.addEventListener('click', (event) => {
+        console.log(event.target.innerText)
+    })
 }
-
-
 
 getQuiz();
 
