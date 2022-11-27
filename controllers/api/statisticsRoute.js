@@ -2,18 +2,26 @@ const router = require('express').Router();
 const Statistics = require('../../models/Statistics');
 
 router.get('/:user_id', async (req, res) => {
-    const userStats = await Statistics.findOne({
-        where: {
-            user_id: req.session.user_id
-        }
-    });
-    if (!userStats) {
-        res.status(400).json({ message: "Statistics under that user id could not be found." });
-    };
-    res.status(200).json(userStats);
+    try {
+        const userStats = await Statistics.findOne({
+            where: {
+                id: req.session.user_id
+            }
+        });
+
+        if (!userStats) {
+            res.status(400).json({ message: "Statistics under that user id could not be found." });
+        };
+
+        const userStatsPlain = userStats.get({ plain: true })
+        res.status(200).json(userStatsPlain)
+
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
-router.post('/create', async (req,res) => {
+router.post('/create', async (req, res) => {
     const newUserStats = await Statistics.create({
         total_played: "",
         wins: 0,
@@ -34,7 +42,8 @@ router.delete('/delete', async (req, res) => {
             res.status(404).json('These statistics could not be found!')
         }
 
-        res.status(200).json(userStats)
+        const userStatsPlain = userStats.get({ plain: true })
+        res.status(200).json(userStatsPlain)
 
         
     } catch (err) {
@@ -52,7 +61,8 @@ router.put('/:user_id/total', async (req, res) => {
         if (!userStats) {
             res.status(400).json({ message: "Statistics under that user id could not be found." })
         };
-        res.status(200).json(userStats);
+        const userStatsPlain = userStats.get({ plain: true })
+        res.status(200).json(userStatsPlain)
     } catch (err) {
         res.status(500).json(err)
     };
@@ -67,11 +77,12 @@ router.put('/:user_id/wins', async (req, res) => {
         });
         if (!userStats) {
             res.status(400).json({ message: "Statistics under that user id could not be found." });
-        }; 
-        res.status(200).json(userStats);
+        };
+        const userStatsPlain = userStats.get({ plain: true })
+        res.status(200).json(userStatsPlain)
     } catch (err) {
         res.status(500).json(err)
     }
 });
 
-module.exports = router;
+module.exports = router; 
