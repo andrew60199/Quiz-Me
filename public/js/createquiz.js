@@ -43,30 +43,6 @@ async function newFormHandler(event) {
         alert('Something went wrong, please try again')
       }
     }
-
-    // Need to go through the form and see which button has been selected.
-    // Then we can set the correctAnswer as the same value...  
-  
-    // const response = await fetch(`api/quiz/upload`, {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     question,
-    //     answerOne,
-    //     answerTwo,
-    //     answerThree,
-    //     answerFour,
-    //     correctAnswer
-    //   }),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // });
-  
-    // if (response.ok) {
-    //   document.location.replace('/');
-    // } else {
-    //   alert(response.statusText);
-    // }
   }
   
   document.querySelector('.new-quiz-form').addEventListener('submit', newFormHandler);

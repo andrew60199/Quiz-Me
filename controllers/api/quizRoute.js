@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
         const userId = req.session.user_id
 
         // Then query the database for their total_played column..
-        const userTotalData = await Quiz.findOne({
+        const userTotalData = await Statistics.findOne({
             where: {
                 user_id: userId
             }, 
