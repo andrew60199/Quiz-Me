@@ -4,7 +4,8 @@ const sequelize = require('../config/connection')
 
 class Quiz extends Model {}
 
-Quiz.init({
+Quiz.init(
+  {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
