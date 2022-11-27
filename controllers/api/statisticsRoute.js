@@ -86,14 +86,4 @@ router.put('/:user_id/wins', async (req, res) => {
     }
 });
 
-router.get('/username', async (req, res) => {
-    const userStats = User.findOne({
-        where: {
-            id: req.session.user_id
-        }
-    })
-
-    res.status(200).json(userStats)
-})
-
 module.exports = router; 
