@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 
+
+
 router.post('/signup', async (req, res) => {
     try {
         const userData = await User.create({
@@ -30,8 +32,8 @@ router.post('/login', async (req, res) => {
 
         if (!userData) {
             res
-            .status(400)
-            .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to create a new account!' });
+                .status(400)
+                .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to create a new account!' });
             return;
         }
 
@@ -39,8 +41,8 @@ router.post('/login', async (req, res) => {
 
         if (!userPassword) {
             res
-            .status(400)
-            .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to create a new account!' });
+                .status(400)
+                .json({ message: 'The login entered does not match a user in our database. Please try again or sign up to create a new account!' });
             return;
         }
 
@@ -48,7 +50,7 @@ router.post('/login', async (req, res) => {
             req.session.user_id = userData.id
             req.session.loggedIn = true;
 
-            res.status(200).json({ message: 'Welcome to QuizMe!'});
+            res.status(200).json({ message: 'Welcome to QuizMe!' });
         });
     } catch (err) {
         res.status(500).json(err);
@@ -80,7 +82,7 @@ router.delete('/delete', async (req, res) => {
 
         res.status(200).json(userData);
 
-        
+
     } catch (err) {
         res.status(500).json(err);
     };
