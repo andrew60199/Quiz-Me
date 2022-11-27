@@ -23,7 +23,7 @@ router.get('/:user_id', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     const newUserStats = await Statistics.create({
-        total_played: "",
+        total_played:"",
         wins: 0,
         user_id: req.session.user_id
     });
