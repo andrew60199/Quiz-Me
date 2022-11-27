@@ -97,6 +97,15 @@ main {
     font-weight: 700;
 }
 
+.image-helper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px
+}
+
+.hero-image {
+    width: 100%
+}
 
 
 /* Tablet and laptop displays*/
@@ -130,6 +139,14 @@ main {
     main {
         margin-top: 5rem;
         padding: 0 0.625rem;
+    }
+
+    .image-helper {
+        background-color: #5E8FDA;
+    }
+
+    .hero-image {
+        width: 50%
     }
 
 }
@@ -170,4 +187,11 @@ main {
         padding: 0 25.5%;
     }
 
+    .image-helper {
+        background-color: #5E8FDA;
+    }
+
+    .hero-image {
+        width: 50%
+    }
 } 
