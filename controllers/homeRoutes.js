@@ -13,7 +13,9 @@ router.get('/login', (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     // Check if they are logged in with the helper function
     // If they are logged in they will be presented their profile/stats
-    res.render('stats')
+    res.render('stats', {
+        username: req.session.username
+    })
 });
 
 router.get('/signup', (req, res) => {

@@ -1,6 +1,7 @@
 // Fetch GET request to /api/quiz/
 const communication = document.querySelector('#message')
 const results = document.querySelector('#answer-response')
+const question = document.querySelector('#question')
 const buttonOne = document.querySelector('#one')
 const buttonTwo = document.querySelector('#two')
 const buttonThree = document.querySelector('#three')
@@ -13,6 +14,8 @@ const getQuiz = async () => {
     if (data.message) {
         communication.textContent = data.message 
     }
+
+    question.textContent = data.question
 
     buttonOne.textContent = data.answer_one
     buttonTwo.textContent = data.answer_two
