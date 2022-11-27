@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Statistics = require('../../models/Statistics');
+const User = require('../../models/user')
 
 router.get('/:user_id', async (req, res) => {
     try {
@@ -84,5 +85,15 @@ router.put('/:user_id/wins', async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+router.get('/username', async (req, res) => {
+    const userStats = User.findOne({
+        where: {
+            id: req.session.user_id
+        }
+    })
+
+    res.status(200).json(userStats)
+})
 
 module.exports = router; 

@@ -4,7 +4,7 @@
   {{!-- Remove buttons other elements on the page if they have answered all the questions or an error occurred --}}
   <div class="row">
     <div class="col-9">
-        <h3>{{{question}}}</h3>
+        <h3 id="question">{{data.question}}</h3>
     </div>
   </div>
 </div>
@@ -13,21 +13,22 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-primary">{{quiz.answer_one}}</button>
+        <button type="button" class="btn btn-primary" id="quiz-button">{{data.answer_one}}</button>
     </div>
     <div class="col-6 col-sm-3">
-      <button type="button" class="btn btn-success">{{Quiz.answer_two}}</button>
+      <button type="button" class="btn btn-success" id="quiz-button">{{data.answer_two}}</button>
     </div>
 
     <!-- Force next columns to break to new line -->
     <div class="w-100"></div>
 
     <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-danger">{{Quiz.answer_three}}</button>
+        <button type="button" class="btn btn-danger" id="quiz-button">{{data.answer_three}}</button>
     </div>
     <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-warning">{{Quiz.answer_four}}</button>
+        <button type="button" class="btn btn-warning" id="quiz-button">{{data.answer_four}}</button>
     </div>
+    <p id="answer-response"></p>
   </div>
 </div>
 
