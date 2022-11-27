@@ -1,20 +1,27 @@
 
-<h2>{{User.username}}</h2>
+<h2>Hello, {{username}}! </h2>
+</br>
+  <p>Please find your statistics below:</p>
 
 <div class="container text-center">
   <div class="row">
-    <div class="col-6 col-sm-3">{{statistics.total_played}}</div>
-    <div class="col-6 col-sm-3"> {{staticstics.wins}}</div>
 
-    {{stats.graph}}
+</br>
+<div>
+  <canvas id="myStats"></canvas>
+</div>
+
   </div>
 </div>
 
-
-<button type="button" class="btn btn-outline-primary"><a href="/editmenu" class="reset-link">Edit Account</a></button>
-<button type="button" class="btn btn-outline-danger" id="delete-button">Delete Account</button>
+</br>
+<div style="text-align:center">
+<button type="button" class="btn btn-warning"><a style="text-decoration: none;" href="/editmenu">Edit Account</a></button>
+<!--- <button type="button" class="btn btn-outline-danger" id="delete-button">Delete Account</button> --->
 
 <button type="button" id="logout-button" class="btn btn-outline-primary">Logout</button>
+</div>
 
 <script defer src="./js/login.js"></script>
 <script defer src="./js/stats.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

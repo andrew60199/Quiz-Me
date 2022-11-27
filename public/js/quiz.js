@@ -10,6 +10,7 @@ const getQuiz = async () => {
     }
 }
 
-getQuiz()
+getQuiz();
 
-// Then place it on the users screen... 
+
+

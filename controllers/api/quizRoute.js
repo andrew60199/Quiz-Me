@@ -17,13 +17,16 @@ router.get('/', async (req, res) => {
         const userTotalData = await Statistics.findOne({
             where: {
                 user_id: userId
-            }
+            }, 
+            
         })
 
         // Not sure which one to use - so run this (comment out everything below) and then uncomment one of the two variables below...
         // console.log(userTotalData)
         // This showed it was an object so we will use the first line below
-        const userTotalPlain = userTotalData.get({ plain: true })
+        const userTotalPlain = userTotalData.get({ plain: true });
+        
+        
         // const userTotalPlain2 = userTotalData.map((project) => project.get({ plain: true }))
 
         // Then break it down so that we have an array of the quiz id's they have already played
@@ -58,7 +61,7 @@ router.get('/', async (req, res) => {
             const getQuiz = await Quiz.findOne({
                 where: {
                     id: randomId
-                }
+                },
             })
 
             const getQuizPlain = getQuiz.get({ plain: true })
@@ -102,11 +105,14 @@ router.get('/', async (req, res) => {
             } else {
                 // If they haven't answered the question then we will send it to the front end!
                 res.json(getQuizPlain)
-
+               
+                
             }
         } 
         
         maybeLoop(totalQuizzes.total, userTotalArray, userId)
+
+    
         
     } catch (error) {
         res.status(500).json(error);

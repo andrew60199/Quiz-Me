@@ -30,11 +30,19 @@ a:active {
     --grayolive: #736D6A;
     --offblack: #333333;
     --primary: #63df05;
+    --lightblue: #B9D1EA;
+    
 }
 
 body {
-    background-color: var(--lightgray);
+    background-color: var(--lightblue);
 }
+
+
+h2 {
+    color: #00235E;
+}
+
 
 /* Had to do this so that the content wouldn't be stuck behind the nav on mobile */
 .footer-helper {
@@ -46,14 +54,15 @@ body {
     border: none;
     margin: 0;
     text-decoration: none;
-    background-color: white;
+    background-color: #337def;
     cursor: pointer;
     text-align: center;
 }
 
 .reset-link {
     text-decoration: none;
-    color: black;
+    color: #fcc729;
+    /*color: #00235E;*/
 }
 
 .header {
@@ -63,8 +72,9 @@ body {
     width: 100%;
     height: 3rem;
     align-items: center;
-    background-color: white;
+    background-color: #337def;
     padding: 0 0.625rem;
+    
 }
     
 .navigation ul {
@@ -75,7 +85,7 @@ body {
     width: 100%;
     padding: 1rem 12.5%;
     justify-content: space-between;
-    background-color: white;
+    background-color: #337def;
 }
 
 main {
@@ -100,7 +110,7 @@ main {
         top: 0;
         justify-content: space-between;
         align-items: center;
-        background-color: white;
+        background-color: #337def;
     }
     
     .header {
@@ -136,7 +146,7 @@ main {
         top: 0;
         justify-content: space-between;
         align-items: center;
-        background-color: white;
+        background-color: #337def;
     }
     
     .header {
