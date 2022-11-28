@@ -1,5 +1,5 @@
-const User = require('./User')
-const Quiz = require('./Quiz')
+const User = require('./user')
+const Quiz = require('./quiz')
 const Statistics = require('./Statistics')
 
 // Associations
