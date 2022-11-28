@@ -1,13 +1,9 @@
 # Quiz Me
 
-## Pitch
-
-
 ## Description
 Our project is an online quiz application. When you log in you can either create a question or answer a question. When you create a question you are prompted to add a title, four possible answers and let us know which one is the correct answer. When you select the option to answer a question you are presented a random multiple choice question from the database. Stats also recorded.  
 
 ## Table of Contents
-  - [Pitch](#pitch)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
@@ -74,23 +70,31 @@ So that I can learn and gain knowledge in a fun and social way
 ```
 GIVEN a general knowledge quiz site
 WHEN I enter the site 
-THEN I am presented with options to either add my own question or answer a randomly selected one
+THEN I am presented with options to either add my own question, answer a randomly selected one or view my profile
 WHEN I try to perform an action when I am not logged in 
 THEN I am redirected to either log in or sign up
-WHEN I log in or sign up
-THEN I also have an option to view my profile
+WHEN I login or sign up
+THEN a session is created and I am redirected back to the website with access to its features
 WHEN I choose to add a question
 THEN I am presented with a prompt to add a question along with four unique answers, along with indicating which answer is correct
 WHEN I submit my question 
 THEN it is saved to a database of other questions
 WHEN I choose to answer a question
-THEN I am given a random multiple question from the database among with four answers
+THEN I am given a random multiple choice question from the database among with four answers
 WHEN I submit an answer to the provided question 
-THEN I am told whether or not I answered it correctly and my answer is saved to a database
+THEN I am told whether or not I answered it correctly and that question is saved to a database along with a win if I answered it correctly. A button then appears asking if I would like to do another one
+WHEN I choose to do another question
+THEN the page is refreshed with a new question
 WHEN I choose to view my profile 
-THEN I am taken to a page where I can view my statistics, go back or log out
+THEN I am taken to a page where I can view my number of wins and total quizzes played, edit my profile information or log out
+WHEN I choose to edit my profile
+THEN I am taken to a menu where I can choose to update my username, email or password
+WHEN I choose what I want to update
+THEN I am taken to a menu with a prompt to insert a new value
+WHEN I enter an acceptable value
+THEN I am redirected back to the editing menu
 WHEN I choose to log out
-THEN I my session is terminated 
+THEN my session is terminated and I am redirected to homepage
 
 ```
 ## Technology
