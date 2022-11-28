@@ -1,16 +1,19 @@
 # Quiz Me
 
+## Pitch
+
+
 ## Description
 Our project is an online quiz application. When you log in you can either create a question or answer a question. When you create a question you are prompted to add a title, four possible answers and let us know which one is the correct answer. When you select the option to answer a question you are presented a random multiple choice question from the database. Stats also recorded.  
 
 ## Table of Contents
+  - [Pitch](#pitch)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
-  - [Demonstration](#demonstration)
   - [License](#license)
   - [Questions](#questions)
   - [Credits](#credits)
@@ -38,9 +41,26 @@ Before attempting to use this application, you must have the follow programs ins
   ```
   Then in your preferred browser open  http://localhost:3001
 
-Once you are on the webpage: 
+Once you are on the webpage, you'll be presented with the homescreen, from which you'll the able to navigate the website.
+<img src='./public/assets/screenshots/front-page.png'>
+<img src='./public/assets/screenshots/front-page-2.png'> 
 
+However, before you're able to follow the links, you'll first need to either login or create a new account. Clicking any button on the homepage beforehand will automatically redirect you to a menu to do so.
+<img src='./public/assets/screenshots/login.png'> 
+<img src='./public/assets/screenshots/sign-up.png'>
 
+User details can be edited at any time by navigating to the bottom of Quiz Me's profile section and selecting the Edit Profile button next to the logout. From there you'll be taken to a small menu with with options for updating your information.
+<img src='./public/assets/screenshots/edit-menu-button.png'> 
+<img src='./public/assets/screenshots/edit-menu.png'> 
+<img src='./public/assets/screenshots/password.png'> 
+
+The main feature of Quiz Me is your ability to download a question from our database to answer. While there are a finite amount of questions, there isn't a limit on how many you can answer in a given sitting and our system ensures that you won't receive the same question twice. The number of questions you've answered and gotten right can also be kept track of in the profile section.
+<img src='./public/assets/screenshots/question.png'> 
+<img src='./public/assets/screenshots/answer.png'> 
+<img src='./public/assets/screenshots/stats.png'> 
+
+On top of that, you also have the option submit your own questions for other people to answer. All you have to do is submit a question along with four possible answers and tell by selecting one which answer is correct.
+<img src='./public/assets/screenshots/create-question.png'> 
 
 ## User Story
 ```
@@ -77,19 +97,19 @@ THEN I my session is terminated
 
 # Questions
 
-  Feel free to reach out if you have any enquiries
-<br/>
-Andrew Beissmann
-Email: andrew60199@gmail.com
-GitHub: [@andrew60199](https://github.com/andrew60199)
-<br/>
-Miles Thomas
-Email: milesman2013@gmail.com
-GitHub: [@MDThomas1](https://github.com/MDThomas1)
-<br/>
-Vivian Lee
-Email: lalala.viv@hotmail.com
-GitHub: [@lalalaviv](https://github.com/lalalaviv)
+## Feel free to reach out if you have any enquiries
+
+Andrew Beissmann:
+* Email: andrew60199@gmail.com
+* GitHub: [@andrew60199](https://github.com/andrew60199)
+
+Miles Thomas:
+* Email: milesman2013@gmail.com
+* GitHub: [@MDThomas1](https://github.com/MDThomas1)
+
+Vivian Lee:
+* Email: lalala.viv@hotmail.com
+* GitHub: [@lalalaviv](https://github.com/lalalaviv)
 
 
 
