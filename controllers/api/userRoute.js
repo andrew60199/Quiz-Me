@@ -91,8 +91,11 @@ router.delete('/delete', async (req, res) => {
 });
 
 router.put('/update/username', async (req, res) => {
+
     try {
-        const userData = await User.update(req.body, {
+        const userData = await User.update({
+            username : req.body.username
+        }, {
             where: {
                 id: req.session.user_id
             }
@@ -110,10 +113,13 @@ router.put('/update/username', async (req, res) => {
 
 router.put('/update/email', async (req, res) => {
     try {
-        const userData = await User.update(req.body, {
+        const userData = await User.update({
+            email : req.body.email
+        }, {
             where: {
                 id: req.session.user_id
-            }
+            },
+            individualHooks: true
         });
 
         if (!userData[0]) {
@@ -128,10 +134,13 @@ router.put('/update/email', async (req, res) => {
 
 router.put('/update/password', async (req, res) => {
     try {
-        const userData = await User.update(req.body, {
+        const userData = await User.update({
+            password : req.body.password
+        }, {
             where: {
                 id: req.session.user_id
-            }
+            },
+            individualHooks: true
         });
 
         if (!userData[0]) {
