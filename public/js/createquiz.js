@@ -1,10 +1,17 @@
+const message = text => {
+  const form = document.querySelector('.new-quiz-form')
+  const main = document.querySelector('main')
+  form.style.display = 'none'
+  const newMessage = document.createElement('h2')
+  newMessage.textContent = text 
+  newMessage.className = 'new-message'
+  main.appendChild(newMessage)
+}
 
 async function newFormHandler(event) {
     event.preventDefault();
 
     const possibleAnswers = document.querySelectorAll('input[name="correct-answer"]')
-
-    console.log(possibleAnswers)
   
     const question = document.querySelector('#post-question').value;
     const answerOne = document.querySelector('#answer-one').value;
@@ -32,13 +39,6 @@ async function newFormHandler(event) {
       }
     }     
 
-    console.log(question)
-    console.log(answerOne)
-    console.log(answerTwo)
-    console.log(answerThree)
-    console.log(answerFour)
-    console.log(correctAnswer)
-
     const response = await fetch('/api/quiz/upload', {
       method: 'POST',
       body: JSON.stringify({
@@ -55,10 +55,10 @@ async function newFormHandler(event) {
     })
 
     if (response.ok) {
-      document.location.replace('/')
+      message('Your quiz was uploaded successfully!')
     } else {
-      alert('Something went wrong, please try again')
+      message('Something went wrong, please try again. Make sure to select which answer is the correct answer.')
     }
   }
   
-  document.querySelector('.new-quiz-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-quiz-form').addEventListener('submit', newFormHandler);
