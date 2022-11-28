@@ -14,6 +14,7 @@ Our project is an online quiz application. When you log in you can either create
   - [Usage](#usage)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
+  - [Technology](#technology)
   - [License](#license)
   - [Questions](#questions)
   - [Credits](#credits)
@@ -92,6 +93,21 @@ WHEN I choose to log out
 THEN I my session is terminated 
 
 ```
+## Technology
+Technologies used in this project are:
+* Visual Studio Code
+* HTML
+* CSS
+* Javascript
+* Express
+* MySQL
+* Sequelize
+* Handlebars
+* Sessions
+* BCrypt
+* Dotenv
+* Chart.js
+
 ## License 
 ![License](https://img.shields.io/github/license/andrew60199/Quiz-Me)
 
