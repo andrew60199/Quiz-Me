@@ -6,6 +6,7 @@ const buttonOne = document.querySelector('#one')
 const buttonTwo = document.querySelector('#two')
 const buttonThree = document.querySelector('#three')
 const buttonFour = document.querySelector('#four')
+const playAgain = document.querySelector('#play-again')
 const container = document.querySelector('.container')
 
 
@@ -29,6 +30,8 @@ const getQuiz = async () => {
         buttonTwo.setAttribute('style', 'display: none;')
         buttonThree.setAttribute('style', 'display: none;')
         buttonFour.setAttribute('style', 'display: none;')
+        playAgain.setAttribute('style', 'display: flex; justify-content: center;')
+
         if (event.target.innerText === data.correct_answer) {
             results.textContent = `Well done! ${data.correct_answer} is the correct answer!`
         } else {
