@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth')
-const User = require('../models/user')
 
 router.get('/', (req, res) => {
     res.render('homepage')

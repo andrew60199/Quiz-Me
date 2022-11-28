@@ -13,20 +13,24 @@ const container = document.querySelector('.container')
 const getQuiz = async () => {
     const response = await fetch('/api/quiz/')
     const data = await response.json();
-    console.log(data)
+    // console.log(data)
     if (data.message) {
-        communication.textContent = data.message 
+        communication.textContent = data.message
+        buttonOne.setAttribute('style', 'display: none;')
+        buttonTwo.setAttribute('style', 'display: none;')
+        buttonThree.setAttribute('style', 'display: none;')
+        buttonFour.setAttribute('style', 'display: none;')
     }
 
+    const quizId = data.id
     question.textContent = data.question
-
     buttonOne.textContent = data.answer_one
     buttonTwo.textContent = data.answer_two
     buttonThree.textContent = data.answer_three
     buttonFour.textContent = data.answer_four
 
-    container.addEventListener('click', (event) => {
-        if (event.target.innerText) {
+    container.addEventListener('click', async (event) => {
+        
         buttonOne.setAttribute('style', 'display: none;')
         buttonTwo.setAttribute('style', 'display: none;')
         buttonThree.setAttribute('style', 'display: none;')
@@ -35,11 +39,62 @@ const getQuiz = async () => {
 
         if (event.target.innerText === data.correct_answer) {
             results.textContent = `Well done! ${data.correct_answer} is the correct answer!`
+
+            // Fetch wins
+            const totalWinsRAW = await fetch('/api/stats/:user_id')
+            const dataObject = await totalWinsRAW.json();
+            let totalGames = dataObject.total_played
+            let totalWins = dataObject.wins
+            totalWins ++
+            // console.log(totalWins)
+
+            // Fetch their text of quiz ids
+            const totalPlayedArray = totalGames.split(" ")
+            const quizIdString = quizId.toString()
+            totalPlayedArray.push(quizIdString)
+
+            // Convert back to string
+            const totalPlayedString = totalPlayedArray.toString(' ')
+            // console.log(totalPlayedString)
+
+            // Then save new list of quiz ids
+            await fetch('/api/stats/:user_id/wins', {
+                method: 'PUT',
+                body: JSON.stringify({ 
+                    total_played: totalPlayedString,
+                    wins : totalWins
+                }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+
         } else {
             results.textContent = `Not quite! ${data.correct_answer} was the correct answer!`
+
+            // Fetch wins
+            const totalWinsRAW = await fetch('/api/stats/:user_id')
+            const dataObject = await totalWinsRAW.json();
+            let totalGames = dataObject.total_played
+
+            // Fetch their text of quiz ids
+            const totalPlayedArray = totalGames.split(" ")
+            const quizIdString = quizId.toString()
+            totalPlayedArray.push(quizIdString)
+
+            // Convert back to string
+            const totalPlayedString = totalPlayedArray.toString(' ')
+            // console.log(totalPlayedString)
+
+            // Then save new list of quiz ids
+            await fetch('/api/stats/:user_id/total', {
+                method: 'PUT',
+                body: JSON.stringify({ 
+                    total_played: totalPlayedString
+                }),
+                headers: { 'Content-Type': 'application/json' },
+            });
         }
-    }
-    })
+    }, { once: true })
 }
 
 getQuiz();

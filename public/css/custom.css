@@ -111,6 +111,10 @@ main {
     margin: 1rem 0;
 }
 
+.centred-button {
+    display: flex;
+    justify-content: center;
+}
 
 /* Tablet and laptop displays*/
 @media screen and (min-width: 769px) and (max-width: 1600px) {

@@ -20,7 +20,6 @@ if (usernameForm) {
             if (response.ok) {
                 document.location.replace('/editmenu')
             } else {
-                console.log(response)
                 communication.textContent = 'Something appears to have gone wrong! Please try again!'
             }
         }

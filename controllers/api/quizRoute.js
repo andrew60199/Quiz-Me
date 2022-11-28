@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
         // const userTotalPlain2 = userTotalData.map((project) => project.get({ plain: true }))
 
         // Then break it down so that we have an array of the quiz id's they have already played
-        const userTotalArray = userTotalPlain.total_played.split(" ")
+        const userTotalArray = userTotalPlain.total_played.split(",")
 
         // Query the quiz model to see how many rows/quizzes are in there
         const totalData = await Quiz.findAll({
@@ -94,7 +94,7 @@ router.get('/', async (req, res) => {
                 }              
 
                 if (loopingArray.length === quizzes) {
-                    console.log('You have answered all the quizzes in our database')
+                    // console.log('You have answered all the quizzes in our database')
                     res.status(200).json({ message: 'You have answered all the quizzes in our database' })
 
                 } else {

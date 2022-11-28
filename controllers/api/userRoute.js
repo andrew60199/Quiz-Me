@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 
-
-
 router.post('/signup', async (req, res) => {
     try {
         const userData = await User.create({
@@ -70,6 +68,8 @@ router.post('/logout', async (req, res) => {
     };
 });
 
+// Future update we can make
+/*
 router.delete('/delete', async (req, res) => {
     try {
         const userData = await User.destroy({
@@ -89,6 +89,7 @@ router.delete('/delete', async (req, res) => {
         res.status(500).json(err);
     };
 });
+*/
 
 router.put('/update/username', async (req, res) => {
 
