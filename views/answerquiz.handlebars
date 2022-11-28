@@ -1,32 +1,32 @@
 <div class="column">
-  <h2 class= "title">Answer this quiz</h2>
+  <h2 class= "title text-center">Answer this quiz</h2>
   <p id="message" class="bold"></p>
   {{!-- Remove buttons other elements on the page if they have answered all the questions or an error occurred --}}
   <div class="row">
-    <div class="col-9">
-        <h3 id="question"></h3>
+    <div class="col-12">
+        <h3 class="text-center" id="question"></h3>
     </div>
   </div>
 </div>
 
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-primary" id="one"></button>
+    <div class="col-6 mb-4">
+        <button type="button" class="btn btn-primary" id="one" style="width: 80%; margin-left: 10%; margin-right: 10%;"></button>
     </div>
-    <div class="col-6 col-sm-3">
-      <button type="button" class="btn btn-success" id="two"></button>
+    <div class="col-6 mb-4">
+      <button type="button" class="btn btn-success" id="two" style="width: 80%; margin-left: 10%; margin-right: 10%;"></button>
     </div>
 
     <!-- Force next columns to break to new line -->
     <div class="w-100"></div>
 
-    <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-danger" id="three"></button>
+    <div class="col-6 mb-4">
+        <button type="button" class="btn btn-danger" id="three" style="width: 80%; margin-left: 10%; margin-right: 10%;"></button>
     </div>
-    <div class="col-6 col-sm-3">
-        <button type="button" class="btn btn-warning" id="four"></button>
+    <div class="col-6 mb-4">
+        <button type="button" class="btn btn-warning" id="four" style="width: 80%; margin-left: 10%; margin-right: 10%;"></button>
     </div>
     <p id="answer-response"></p>
   </div>

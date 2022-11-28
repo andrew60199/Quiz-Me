@@ -25,7 +25,15 @@ const getQuiz = async () => {
     buttonFour.textContent = data.answer_four
 
     container.addEventListener('click', (event) => {
-        console.log(event.target.innerText)
+        buttonOne.setAttribute('style', 'display: none;')
+        buttonTwo.setAttribute('style', 'display: none;')
+        buttonThree.setAttribute('style', 'display: none;')
+        buttonFour.setAttribute('style', 'display: none;')
+        if (event.target.innerText === data.correct_answer) {
+            results.textContent = `Well done! ${data.correct_answer} is the correct answer!`
+        } else {
+            results.textContent = `Not quite! ${data.correct_answer} was the correct answer!`
+        }
     })
 }
 
