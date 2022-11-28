@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Statistics = require('../../models/Statistics');
-const User = require('../../models/user')
 
 router.get('/:user_id', async (req, res) => {
     try {
@@ -31,6 +30,8 @@ router.post('/create', async (req, res) => {
     res.status(200).json(newUserStats);
 });
 
+// Future development when we include delete account functionality
+/*
 router.delete('/delete', async (req, res) => {
     try {
         const userStats = await Statistics.destroy({
@@ -51,10 +52,13 @@ router.delete('/delete', async (req, res) => {
         res.status(500).json(err)
     }
 });
+*/
 
 router.put('/:user_id/total', async (req, res) => {
     try {
-        const userStats = Statistics.update(req.body.total_played, {
+        const userStats = Statistics.update({
+            total_played : req.body.total_played
+        }, {
             where: {
                 user_id: req.session.user_id
             }
@@ -62,8 +66,8 @@ router.put('/:user_id/total', async (req, res) => {
         if (!userStats) {
             res.status(400).json({ message: "Statistics under that user id could not be found." })
         };
-        const userStatsPlain = userStats.get({ plain: true })
-        res.status(200).json(userStatsPlain)
+        res.status(200).json(userStats)
+
     } catch (err) {
         res.status(500).json(err)
     };
@@ -71,7 +75,10 @@ router.put('/:user_id/total', async (req, res) => {
 
 router.put('/:user_id/wins', async (req, res) => {
     try {
-        const userStats = Statistics.update(req.body.wins, {
+        const userStats = Statistics.update({
+            total_played : req.body.total_played,
+            wins : req.body.wins,
+        }, {
             where: {
                 user_id: req.session.user_id
             }
@@ -79,8 +86,8 @@ router.put('/:user_id/wins', async (req, res) => {
         if (!userStats) {
             res.status(400).json({ message: "Statistics under that user id could not be found." });
         };
-        const userStatsPlain = userStats.get({ plain: true })
-        res.status(200).json(userStatsPlain)
+        res.status(200).json(userStats)
+        
     } catch (err) {
         res.status(500).json(err)
     }

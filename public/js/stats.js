@@ -1,12 +1,11 @@
 const getstats = async () => { 
-    const response = await fetch('/api/stats/:user_id')
-    const data = await response.json();
-
-    // const username = req.session.username
+  const response = await fetch('/api/stats/:user_id')
+  const data = await response.json()
 
   const ctx = document.getElementById('myStats');
 
-  const total = data.total_played.split(" ").join("").length;
+  const totalRAW = data.total_played.split(",")
+  const total = totalRAW.length
 
   new Chart(ctx, {
     type: 'bar',
@@ -32,17 +31,7 @@ const getstats = async () => {
       }
     }
   });
-
-  console.log(data)
-  // console.log(username)
 } 
 
 getstats(); 
 
-//const getuser = async () => {
-    //const response = await fetch('/api/data/user')
-    //const data = await response.json();
-   // console.log(data); 
-//}
-
-//getuser(); 
