@@ -39,13 +39,6 @@ const getstats = async () => {
 
 getstats(); 
 
-const getUsername = async () => {
-  const response = await fetch('/api/stats/username')
-  const username = response.username
-}
-
-getUsername()
-
 //const getuser = async () => {
     //const response = await fetch('/api/data/user')
     //const data = await response.json();
